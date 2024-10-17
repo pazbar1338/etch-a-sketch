@@ -1,0 +1,23 @@
+#sketch-container {
+    border: 1px solid black;
+    height: 500px;
+    display: flex;
+}
+
+.column {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row {
+    border: 1px solid black;
+    display: flex;
+    flex: 1;
+}
+
+/* .colored {
+    background-color: red;
+} */
+
