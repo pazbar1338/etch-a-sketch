@@ -1,7 +1,77 @@
-#sketch-container {
-    border: 1px solid black;
-    height: 500px;
+body {
+    text-align: center;
+    box-sizing: border-box;
+    /* background-color: rgb(18,3,64); */
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: rgb(18,3,64);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+}
+
+#header>h1 {
+    font-size: 50px;
+    font-style: italic;
+    color: white;
+    cursor:default;
+}
+
+.separator {
+    border-top: 5px solid red;
+}
+
+/* START OF CONTENT */
+
+#content {
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons-container {
+    display: flex;
+    justify-content:center;
+    padding: 25px 0;
+    gap: 20px;
+    background-color: rgb(18,3,64);
+}
+
+.button {
+    background-color: rgb(255,255,0);
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+    color: rgb(18,3,64);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* START OF SKETCH */
+
+#sketch-container {
+    background-image: linear-gradient(rgb(18,3,64), white);
+    width: auto;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#sketch {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    display: flex;
+    cursor: crosshair;
+    background-color: white;
 }
 
 .column {
@@ -16,4 +86,7 @@
     display: flex;
     flex: 1;
 }
+
+
+
 

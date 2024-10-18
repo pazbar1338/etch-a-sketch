@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch A Sketch</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="grid-size-btn" class="button">Change grid size</button>
-    <button id="grid-reset-btn" class="button">Reset grid</button>
-    <button id="pencil-btn" class="button">Pencil style</button>
-    <button id="rainbow-btn" class="button">Rainbow style</button>
-    <div id="sketch-container"></div>
+    <div id="header">
+        <h1>Etch-A-Sketch</h1>
+        <div class="separator"></div>
+    </div>
+    <div id="content">
+        <div id="buttons-container">
+            <button id="grid-size-btn" class="button">Change grid size</button>
+            <button id="grid-reset-btn" class="button">Reset grid</button>
+            <button id="pencil-btn" class="button">Pencil style</button>
+            <button id="rainbow-btn" class="button">Rainbow style</button>
+        </div>
+        <div class="separator"></div>
+        <div id="sketch-container">
+            <div id="sketch"></div>
+        </div>
+        <div class="separator"></div>
+    </div>
 </body>
 </html>

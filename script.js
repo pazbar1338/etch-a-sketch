@@ -1,4 +1,4 @@
-const sketchContainer = document.querySelector('#sketch-container');
+const sketchContainer = document.querySelector('#sketch');
 
 const setRgbStyle = () => {
     const rows = document.querySelectorAll('.row');
@@ -20,7 +20,6 @@ const setPencilStyle = () => {
     const rows = document.querySelectorAll('.row');
     rows.forEach(function(row) {
     row.addEventListener('mouseover', () => { 
-
         row.style.backgroundColor = "black";
         if (opacity < 100) {
             opacity += 10;
