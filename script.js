@@ -1,12 +1,13 @@
 const sketchContainer = document.querySelector('#sketch-container');
 
-const setDefaultColor = () => {
+const setRgbStyle = () => {
     const rows = document.querySelectorAll('.row');
     rows.forEach(function (row) {
     row.addEventListener('mouseover', () => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
+        row.style.opacity = "1";
         row.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     });
 })};
@@ -15,13 +16,19 @@ const pencilBtn = document.querySelector('#pencil-btn');
 
 const setPencilStyle = () => {
 
-    resetGrid();
+    let opacity = 0;
     const rows = document.querySelectorAll('.row');
-    rows.forEach(function (row) {
-    row.addEventListener('mouseover', () => {
+    rows.forEach(function(row) {
+    row.addEventListener('mouseover', () => { 
+
         row.style.backgroundColor = "black";
-        //row.style.opacity
-        
+        if (opacity < 100) {
+            opacity += 10;
+            row.style.opacity = `${opacity}%`;;
+        }
+        else {
+            opacity = 0;
+        }
     });
 })};
 
@@ -40,12 +47,12 @@ const createDefaultGrid = function () {
             column.appendChild(row);
         }
     }
-    setDefaultColor();
+    setRgbStyle();
 }
 createDefaultGrid();
 
-
-const sizeBtn = document.querySelector('#grid-size-btn'); //create userGrid
+//create userGrid
+const sizeBtn = document.querySelector('#grid-size-btn'); 
 sizeBtn.addEventListener("click", () => { 
 
     let userCol = +prompt(`How many COLUMNS do you want the grid to have?`, 50);
@@ -56,7 +63,7 @@ sizeBtn.addEventListener("click", () => {
     let userRow = +prompt(`How many ROWS do you want the grid to have?`, 50);
     while ((isNaN(userRow)) || (userRow > 100)) {
         userRow = +prompt(`[ROWS] Please, introduce a number smaller than 100`, 50);
-    };  
+    };
 
     const createUserGrid = function () {
 
@@ -73,7 +80,7 @@ sizeBtn.addEventListener("click", () => {
                 column.appendChild(row);
             }
         }
-        setDefaultColor(); 
+        setRgbStyle(); 
     }
     createUserGrid();
 });
@@ -89,10 +96,13 @@ const resetGrid = function () {
     const rows = document.querySelectorAll('.row');
     rows.forEach(function (row) {
         row.style.backgroundColor = "";
-        // row.classList.remove("colored");
+        row.style.opacity = '1';
     });
 };
 
 const resetBtn = document.querySelector('#grid-reset-btn');
 resetBtn.addEventListener("click", resetGrid);
+
+const rainbowBtn = document.querySelector('#rainbow-btn');
+rainbowBtn.addEventListener("click", setRgbStyle);
     
