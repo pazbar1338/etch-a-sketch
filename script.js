@@ -12,7 +12,8 @@ const setRgbStyle = () => {
     });
 })};
 
-const pencilBtn = document.querySelector('#pencil-btn');
+const rainbowBtn = document.querySelector('#rainbow-btn');
+rainbowBtn.addEventListener("click", setRgbStyle);
 
 const setPencilStyle = () => {
 
@@ -31,8 +32,23 @@ const setPencilStyle = () => {
     });
 })};
 
+const pencilBtn = document.querySelector('#pencil-btn');
 pencilBtn.addEventListener("click", setPencilStyle);
 
+const setEraserStyle = () => {
+    const rows = document.querySelectorAll('.row');
+    rows.forEach(function(row) {
+        row.addEventListener('mouseover', () => {
+            row.style.backgroundColor = '';
+            row.style.opacity = '';
+        })
+    })
+}
+
+const eraserBtn = document.querySelector('#eraser-btn');
+eraserBtn.addEventListener('click', setEraserStyle);
+
+// GRIDS
 const createDefaultGrid = function () {
 
     for (let i = 0; i < 16; i++) {
@@ -101,7 +117,4 @@ const resetGrid = function () {
 
 const resetBtn = document.querySelector('#grid-reset-btn');
 resetBtn.addEventListener("click", resetGrid);
-
-const rainbowBtn = document.querySelector('#rainbow-btn');
-rainbowBtn.addEventListener("click", setRgbStyle);
     
