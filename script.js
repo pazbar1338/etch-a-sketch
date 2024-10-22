@@ -15,22 +15,22 @@ const setRgbStyle = () => {
 const rainbowBtn = document.querySelector('#rainbow-btn');
 rainbowBtn.addEventListener("click", setRgbStyle);
 
-const setPencilStyle = () => {
 
-    let opacity = 0;
+
+const setPencilStyle = function() {
+    
     const rows = document.querySelectorAll('.row');
     rows.forEach(function(row) {
-    row.addEventListener('mouseover', () => { 
-        row.style.backgroundColor = "black";
-        if (opacity < 100) {
-            opacity += 10;
-            row.style.opacity = `${opacity}%`;;
-        }
-        else {
-            opacity = 0;
-        }
-    });
-})};
+        let opacity = 0.1;
+        row.addEventListener('mouseover', () => {
+            row.style.backgroundColor = 'black';
+            row.style.opacity = `${opacity}`;
+            if (opacity < 0.9) {
+                opacity += 0.1;
+            }
+        })
+    })
+};
 
 const pencilBtn = document.querySelector('#pencil-btn');
 pencilBtn.addEventListener("click", setPencilStyle);
@@ -110,8 +110,8 @@ const deleteGrid = () => {
 const resetGrid = function () {
     const rows = document.querySelectorAll('.row');
     rows.forEach(function (row) {
-        row.style.backgroundColor = "";
-        row.style.opacity = '1';
+        row.style.backgroundColor = '';
+        row.style.opacity = '';
     });
 };
 
